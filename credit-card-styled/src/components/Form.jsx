@@ -6,7 +6,7 @@ const MainDiv = styled.div`
   width: 45%;
   box-sizing: border-box;
   label {
-    font-size: 8px;
+    font-size: 10px;
   }
   i {
     color: #f6425b;
@@ -14,7 +14,7 @@ const MainDiv = styled.div`
   }
 `;
 
-const InputDiv = styled.div`
+const Inputpart = styled.div`
   border-bottom: 2px solid #f6425b;
   display: flex;
   gap: 5px;
@@ -29,7 +29,7 @@ const InputDiv = styled.div`
   }
 `;
 
-const PayDiv = styled.div`
+const Paypart = styled.div`
   text-align: center;
   button {
     background-color: #f6425b;
@@ -44,7 +44,7 @@ const PayDiv = styled.div`
     font-weight: 700;
   }
 `;
-const FormDiv = styled.div`
+const Frompart = styled.div`
   margin-top: 40px;
   > div {
     margin: 15px 0;
@@ -63,63 +63,63 @@ const Form = ({ handleName, handleNumber, handleMonth, handleYear,handleCvc }) =
   return (
     <MainDiv>
       <p>Payment Details</p>
-      <FormDiv>
+      <Frompart>
         <div>
           <label>CARDHOLDER NAME</label> <br />
-          <InputDiv>
+          <Inputpart>
             <i class="fa-solid fa-user"></i>
             <input
               type="text"
               placeholder="Card holder name"
               onChange={handleName}
             />
-          </InputDiv>
+          </Inputpart>
         </div>
 
         <div>
           <label>CARD NUMBER</label> <br />
-          <InputDiv>
+          <Inputpart>
             <i class="fa-solid fa-credit-card"></i>
             <input
               type="tel"
               placeholder="Card number"
               onChange={handleNumber}
             />
-          </InputDiv>
+          </Inputpart>
         </div>
 
         <div>
           <div>
             <label>EXPIRY MONTH</label> <br />
-            <InputDiv>
+            <Inputpart>
               <i class="fa-regular fa-calendar"></i>
               <input type="text" onChange={handleMonth} placeholder="month"/>
-            </InputDiv>
+            </Inputpart>
           </div>
 
           <div>
             <label>EXPIRY YEAR</label> <br />
-            <InputDiv>
+            <Inputpart>
               <i class="fa-regular fa-calendar"></i>
               <input type="text" onChange={handleYear} placeholder="year"/>
-            </InputDiv>
+            </Inputpart>
           </div>
 
           <div>
             <label>CVC</label> <br />
-            <InputDiv>
+            <Inputpart>
               <i class="fa-solid fa-lock"></i>
               <input type="text" onChange={handleCvc} placeholder="cvc"/>
-            </InputDiv>
+            </Inputpart>
           </div>
         </div>
-        <PayDiv>
+        <Paypart>
           <p>
             Payment amount: <span>12 300 ₽</span>
           </p>
           <button type="submit">PAY</button>
-        </PayDiv>
-      </FormDiv>
+        </Paypart>
+      </Frompart>
     </MainDiv>
   );
 };
